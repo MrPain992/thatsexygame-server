@@ -1,14 +1,16 @@
-var http = require("http");
+var app = require('express')();
+var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
-var server = http.createServer(function (req, res){
-  res.writeHead(200, {"Content-Type": "text/html"});
-  res.end("<h1>hello</h1>");
-})
+app.get('/', function(req, res){
+  res.end('<h1>You\'re not supposed to be here, go away ;_;</h1>');
+});
 
 var port = Number(process.env.PORT || 20000);
 
-server.listen(port);
+http.listen(port, function(){
+  console.log("listening on port: " + port);
+});
 
 // var realm = {
 //   'lobbies': [
@@ -38,6 +40,11 @@ var realm = {
 };
 
 io.on('connection', function(socket){
+
+  socket.on('test', function(data){
+    console.log("test: " + data);
+    socket.emit('test', data);
+  });
 
   socket.on('login', function(data){
     realm.users.push( { 'nick': data.nick } );
