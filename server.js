@@ -65,6 +65,18 @@ io.on('connection', function(socket){
     socket.emit('updateUsers', realm.users);
   });
 
+  socket.on('newLobby', function(data){
+    console.log("received lobby creation request: \n");
+	 console.log(data);
+    var ok = true;
+
+    if(ok){
+      realm.lobbies.push(data);
+      io.emit('updateLobbies', realm.lobbies);
+    }
+    socket.emit('newLobbyResponse', ok);
+  });
+
   socket.on('loadLobbies', function(){
     socket.emit('updateLobbies', realm.lobbies);
   });
