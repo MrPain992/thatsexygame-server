@@ -1,0 +1,33 @@
+{
+  "name": "thatsexygame-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+<<<<<<< HEAD
+    "start": "start initialization.bat",
+    "stop" : "taskkill /im mongod.exe /f"
+=======
+    "start": "node server.js"
+>>>>>>> 57e3fff22b227c8d90292af153efbee64b5211d0
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrPain992/thatsexygame-server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MrPain992/thatsexygame-server/issues"
+  },
+  "homepage": "https://github.com/MrPain992/thatsexygame-server#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+<<<<<<< HEAD
+    "mongoose": "^4.5.0",
+=======
+>>>>>>> 57e3fff22b227c8d90292af153efbee64b5211d0
+    "socket.io": "^1.4.6"
+  }
+}
